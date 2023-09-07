@@ -280,13 +280,18 @@ a {
   gap: 24px;
   justify-content: center;
 }
+.team-socials-point {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
 .team-socials-point-svg {
   box-sizing: content-box;
   width: 16px;
   height: 16px;
   padding: 12px;
   fill: #f4f4fd;
-  background-image: url(../images/ellipse.svg);
 }
 /*_________________________________ OUR PORTFOLIO _______________________________*/
 .section-our-porfolio {
