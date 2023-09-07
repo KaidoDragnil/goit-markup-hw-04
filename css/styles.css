@@ -39,8 +39,6 @@ a {
 
 .container {
   width: 1158px;
-  /* padding-left: 156px;
-  padding-right: 156px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -86,6 +84,8 @@ a {
   flex-basis: calc(100%-80px) / 3;
 }
 .link-navigation {
+  position: relative;
+  display: block;
   color: #2e2f42;
   font-size: 16px;
   padding-top: 24px;
@@ -94,9 +94,22 @@ a {
   line-height: 1.5;
   letter-spacing: 0.32px;
 }
+
 .link-navigation:hover,
 .link-navigation:focus {
   color: #404bbf;
+}
+
+.link-navigation:hover::after,
+.link-navigation:focus::after {
+  content: '';
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  width: 100%;
+  background-color: #404bbf;
+  position: absolute;
+  bottom: -1px;
 }
 .our-address {
   font-style: normal;
@@ -117,10 +130,16 @@ a {
   color: #404bbf;
 }
 
-/* MAIN */
-/* HERO */
+/*___________________________________________ MAIN ___________________________________________*/
+
+/*___________________________________________ HERO ___________________________________________*/
 .hero-image {
-  background-color: #2e2f42;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url('../images/people-office.jpg');
+  background-size: cover;
   margin-left: 0;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -174,6 +193,9 @@ a {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+/*____________________________ OUR METODS ___________________________*/
+
 .section-our-medots {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -191,6 +213,7 @@ a {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.4px;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 .metod-text {
@@ -198,8 +221,14 @@ a {
   line-height: 1.5;
   letter-spacing: 0.32px;
 }
+.our-metods-icon-block {
+  padding: 24px 100px;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+}
 
-/* OUR TEAM */
+/* ____________________________ OUR TEAM _________________________________*/
 .our-team-section {
   background: #f4f4fd;
   padding-top: 120px;
@@ -208,7 +237,6 @@ a {
 .team-list {
   display: flex;
   gap: 24px;
-  padding-bottom: 120px;
 }
 .our-team-title,
 .our-portfolio-title {
@@ -245,9 +273,22 @@ a {
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.32px;
+  margin-bottom: 8px;
 }
-
-/* OUR PORTFOLIO */
+.team-socials {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.team-socials-point-svg {
+  box-sizing: content-box;
+  width: 16px;
+  height: 16px;
+  padding: 12px;
+  fill: #f4f4fd;
+  background-image: url(../images/ellipse.svg);
+}
+/*_________________________________ OUR PORTFOLIO _______________________________*/
 .section-our-porfolio {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -262,7 +303,7 @@ a {
   row-gap: 48px;
 }
 .our-portfolio-list .list-item {
-  width: calc((100% - 48px) / 3);
+  width: calc((100% - 78px) / 3);
 }
 .our-portfolio-block-name {
   padding: 32px 16px;
@@ -283,7 +324,34 @@ a {
   line-height: 1.5;
   letter-spacing: 0.32px;
 }
-/* footer */
+.our-portfolio-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.our-portfolio-image-wrapper:hover .overlay,
+.our-portfolio-image-wrapper:focus .overlay {
+  transform: translateY(0%);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms;
+  color: var(--CLOUD, #f4f4fd);
+  overflow: auto;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.02em;
+}
+
+/* ________________________________ footer _______________________________ */
 .block-logo {
   background: #2e2f42;
   padding: 100px 0;
@@ -298,4 +366,28 @@ a {
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
+}
+.container-footer {
+  display: flex;
+  gap: 120px;
+}
+.container-social-media {
+  display: flex;
+  flex-direction: column;
+}
+.social-media-title {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  padding-bottom: 16px;
+}
+.social-media-list {
+  display: flex;
+  gap: 16px;
+}
+.social-media-list-point {
 }
