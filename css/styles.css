@@ -89,7 +89,7 @@ a {
 .link-navigation {
   position: relative;
   display: block;
-  color: #404bbf;
+  color: #2e2f42;
 
   font-size: 16px;
   padding-top: 24px;
@@ -105,7 +105,7 @@ a {
   color: #404bbf;
 }
 
-.link-navigation::after {
+.first-link-navigation::after {
   content: '';
   display: block;
   height: 4px;
@@ -115,6 +115,9 @@ a {
   position: absolute;
   left: 0;
   bottom: -1px;
+}
+.first-link-navigation {
+  color: #404bbf;
 }
 .our-address {
   font-style: normal;
